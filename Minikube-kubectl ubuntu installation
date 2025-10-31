@@ -13,24 +13,18 @@ minikube version
 
 #installing kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
-
-#Giving Xpermission to kbectl
 chmod +x kubectl
-
-#moving kubectl to its default path to install
 mv kubectl /usr/local/bin/
-
-#kubectl version
 kubectl version
 
 #installing aws cli
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-    unzip awscliv2.zip
-    sudo ./aws/install
-    aws --version
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
 
 #installing kops
     curl -Lo kops https://github.com/kubernetes/kops/releases/download/$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)/kops-linux-amd64
-    chmod +x kops
-    sudo mv kops /usr/local/bin/kops
+chmod +x kops
+sudo mv kops /usr/local/bin/kops
 kops version
